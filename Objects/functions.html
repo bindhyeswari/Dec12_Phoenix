@@ -54,6 +54,19 @@
 
         console.log('addition of x and y: ', x + y);
 
+        function Car() {
+
+        }
+
+        Car.data = 10;
+        Car.prototype.data = 100;
+
+        var diff_car = Object.create(Car);
+        var normal_car = new Car();
+
+        console.log(diff_car.toString()); // diff_car --> Car --> Function.prototype --> Object.prototype
+        console.log(normal_car.data); // normal_car --> Car.prototype --> Object.prototype
+
 
     </script>
 </head>
