@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // Object literal
+        var person = {
+            name: 'Alex',
+            email: 'alex@gmail.com'
+        };
+
+        // person inherits from Object.prototype
+
+        console.log(person.toString());
+
+        // Constructor
+        function Person(name, email) {
+            // this.name = name;
+            this.email = email;
+        }
+
+        // Person --> Function.prototype --> Object.prototype
+
+        Object.prototype.superid = '242';
+        Person.prototype.id = '121';
+        Person.class = 'constructor';
+
+        var alex = new Person('Alex', 'alex@gmail.com');
+        console.log(alex);
+        // ['asdf', 5, true] / undefined / null
+
+
+        // alex inherits from Person.prototype
+
+        console.log(Person.name);
+
+        // alex --> Person.prototype (typeof -- object) {} --> Object.prototype
+
+        console.log(typeof Person);
+
+        /*function add(x, y) {
+            return x + y;
+        }
+        */
+        var add = new Function('x', 'y', 'return x + y;'); // add --> Function.prototype
+
+        console.log(typeof add);
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

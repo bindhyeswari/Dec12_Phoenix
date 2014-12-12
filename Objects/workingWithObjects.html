@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        console.log(navigator);
+
+        // pull out all properties which are primitives and put them in a new object
+        // print it out
+
+        // use the typeof operator to do that
+
+        function filterPrimitives(obj) {
+            var filtered = {};
+
+            for (var prop in obj) {
+                var type = typeof obj[prop];
+                if (type !== 'object' && type !== 'function') {
+                    filtered[prop] = obj[prop];
+                }
+            }
+
+            return filtered;
+        }
+
+        var filtered = filterPrimitives(navigator);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+
+        function Car() {
+            // refers to audi using 'this' keyword
+            this.id = 10;
+        }
+
+        Car.model = 'A6'; // static variable
+        Car.prototype.make = 'Audi'; // instance variable
+
+        var audi = new Car(); // audi is an instance of Car
+
+        // 1. creates a new object {}
+        // 2. changes the parent to Constructor.prototype
+        // 3. invokes the function Constructor while pointing to the newly created object using 'this'
+
+        console.log(audi instanceof Car);
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

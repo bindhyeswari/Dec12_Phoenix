@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // uiengineer --> employee --> person
+
+        function Person() {
+
+        }
+
+        Person.prototype.type = 'Person';
+
+        function Employee() {
+
+        }
+
+        Employee.prototype = new Person();
+        Employee.prototype.typeofperson = 'Employee';
+
+        function UIEngineer () {
+
+        }
+
+        UIEngineer.prototype = new Employee();
+        UIEngineer.prototype.typeofemployee = 'UI Engineer';
+
+        // test case
+        var uiengineer = new UIEngineer();
+        console.log(uiengineer); // type, typeofperson, typeofemployee
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

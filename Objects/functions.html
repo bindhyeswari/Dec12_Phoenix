@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var obj = {
+            val: 10,
+            add: function (x, y) {
+                return this.val + x + y;
+            },
+            toString: function () {
+                return this.val.toString();
+            }
+        };
+
+        var obj2 = {
+            val: 100
+        };
+
+        console.log(obj.add(10));
+
+        console.log(typeof obj.add);
+
+        console.log(Object.getPrototypeOf(obj.add));
+
+        console.log(obj.add.call(obj2, 10, 10));
+        console.log(obj.add.apply(obj2, [10, 10]));
+
+        console.log(obj.toString());
+        console.log(obj.add.toString());
+
+        // obj --> Object.prototype
+        // obj.add --> Function.prototype --> Object.prototype
+
+        console.log('printing out toString outputs based on Object and Function prototypes: ');
+        console.log(Object.prototype.toString.call(obj.add));
+        console.log(Function.prototype.toString.call(obj.add));
+
+        var x = {
+            val: 10,
+            valueOf: function () {
+                return this.val;
+            }
+        };
+
+        var y = {
+            val: 20,
+            valueOf: function () {
+                return this.val;
+            }
+        };
+
+        console.log('addition of x and y: ', x + y);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

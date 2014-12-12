@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        /*function Audi() {
+         this.wheels = 4;
+         }
+
+         function BMW() {
+         this.wheels = 4;
+         }
+
+         function Mercedes() {
+         this.wheels = 4;
+         }
+
+         var a6 = new Audi();
+         var _328i = new BMW();
+         var clk = new Mercedes();*/
+
+        // the constructor to be used is known at runtime, not compile time
+
+        var Factory = {
+            create: function (make, model) {
+
+
+                // run the appropriate constructor from the makes array
+                var car = new Factory.makes[make]();  // new Factory.makes['Audi']() -- new Factory.makes.Audi
+
+                // add wheels onto the object
+                car.wheels = 4;
+
+                // return object
+                return car;
+
+            },
+            makes: {
+                'Audi': function Audi() {
+                    this.engine = 'Quattro';
+                },
+                'BMW': function BMW() {
+                }
+            }
+        };
+
+
+
+        var audi = Factory.create('Audi', 'A7');
+        var bmw = Factory.create('BMW', '_328i');
+        var mercedes = Factory.create('Mercedes', 'clk');
+
+        console.log(audi, bmw, mercedes);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

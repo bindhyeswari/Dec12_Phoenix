@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // [string, number, boolean, undefined, null, object]
+
+        console.log(window.navigator);
+
+        var filtered = {};
+
+        for (var prop in navigator) {
+            var type = typeof navigator[prop];
+            if (type !== 'object' && type !== 'function') {
+                filtered[prop] = navigator[prop];
+            }
+        }
+
+        console.log(filtered);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

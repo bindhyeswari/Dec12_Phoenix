@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // Object attribtues - prototype, class, extensible
+
+        var z = {
+            identifier: 'iden23'
+        };
+
+        console.log(Object.getPrototypeOf(z));
+
+        var x = Object.create(z); // TODO: read about the second parameter
+
+        console.log(Object.getPrototypeOf(x)); // the prototype ATTRIBUTE points to the parent
+
+        x.name = 'Chris';
+
+        // property attributes  - configurable, enumerable and writable
+        Object.defineProperty(x, 'name', { // defineProperties
+            writable: false,
+            enumerable: false,
+            configurable: false
+        });
+
+
+
+        Object.defineProperty(x, 'name', { // defineProperties
+            writable: true,
+            enumerable: false
+        });
+        x.name = 'Rice Li';
+        console.log(x.name);
+
+
+        x.id = 10;
+
+        for (var prop in x) { // enumeration
+            if (x.hasOwnProperty(prop))
+                console.log(prop);
+        }
+
+        console.log(Object.keys(x)); // enumerable properties
+        console.log(Object.getOwnPropertyNames(x)); // non-enumerable
+
+        var y = {
+            id: 63,
+            name: 'Chris'
+        };
+
+
+        function equals(a, b) {
+
+            // return JSON.stringify(a) === JSON.stringify(b);
+            // if all the properties of a and b are same, it returns true
+            // else it returns false
+
+            // loop over all properties of a
+            // check if that property exists in b and it has the same value
+            // return true/false accordingly
+
+            for ( var prop in a ) { // prop  = 'name'
+                if ( prop in b && a[prop] === b[prop] ) {
+                    // properties are same
+                } else {
+                    // properties are not same
+                    return false;
+                }
+            }
+
+            for ( var prop in b ) { // prop  = 'name'
+                if ( prop in a && a[prop] === b[prop] ) {
+                    // properties are same
+                } else {
+                    // properties are not same
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        console.log(equals(x, y));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
